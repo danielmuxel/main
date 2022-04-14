@@ -16,10 +16,20 @@
 
 <script>
 import { mapState } from "vuex";
+import PostService from "~/services/PostService";
 
 export default {
+  // necessary to use with fetch and without store
+  // data() {
+  //   return {
+  //     posts: [],
+  //   };
+  // },
   async fetch({ store, error }) {
     try {
+      // works
+      // response = PostService.getPosts()
+      // this.posts = response.data
       await store.dispatch("posts/getPosts");
     } catch (error) {
       error({
