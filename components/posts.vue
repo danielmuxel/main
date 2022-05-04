@@ -25,16 +25,14 @@ export default {
   //     posts: [],
   //   };
   // },
-  async fetch({ store, error }) {
+  async fetch() {
     try {
       // works
       // response = PostService.getPosts()
       // this.posts = response.data
-      await store.dispatch("posts/getPosts");
+      await this.$store.dispatch("posts/getPosts");
     } catch (error) {
-      error({
-        message: "Could not fetch posts: " + error.message,
-      });
+      console.error(error);
     }
   },
   computed: {

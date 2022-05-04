@@ -13,6 +13,7 @@ export const mutations = {
 export const actions = {
   async getPosts({ commit }) {
     const response = await PostService.getPosts();
+    console.log(response.data);
     commit("SET_POSTS", response.data);
   },
 };
